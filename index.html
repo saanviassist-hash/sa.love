@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff4e4" />
+  <title>The Story I'll Always Choose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/loading-heart.gif" as="image" />
+  <link rel="preload" href="assets/rose.png" as="image" />
+  <link rel="preload" href="assets/envelope.png" as="image" />
+  <link rel="preload" href="assets/petal.png" as="image" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader" class="loader" aria-live="polite">
+    <img src="assets/loading-heart.gif" alt="" />
+    <p>Opening our little love diary...</p>
+  </div>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="paper-grain"></span>
+    <span class="glow glow-one"></span>
+    <span class="glow glow-two"></span>
+    <span class="glow glow-three"></span>
+    <img class="floating-photo photo-a" src="assets/rose.png" alt="" />
+    <img class="floating-photo photo-b" src="assets/flower.png" alt="" />
+  </div>
+  <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
+  <div id="heartLayer" class="heart-layer" aria-hidden="true"></div>
+  <div id="sparkleLayer" class="sparkle-layer" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <section id="passwordScreen" class="screen password-screen is-active" aria-labelledby="passwordTitle">
+      <div class="glass-panel password-card">
+        <img class="asset-mark" src="assets/rose.png" alt="" />
+        <p class="eyebrow">A private chapter</p>
+        <h1 id="passwordTitle">The Story I'll Always Choose</h1>
+        <p class="subtitle">Some stories are meant for only one person.</p>
+        <form id="passwordForm" class="password-form">
+          <label for="passwordInput">Password Hint</label>
+          <p class="hint">The day our story began.</p>
+          <div class="input-wrap">
+            <input id="passwordInput" type="password" inputmode="numeric" autocomplete="off" placeholder="Enter password" aria-describedby="passwordHint passwordError" />
+            <button type="submit" class="ripple-btn">Unlock</button>
+          </div>
+          <span id="passwordHint" class="sr-only">Use the date our story began.</span>
+          <p id="passwordError" class="error" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="introScreen" class="screen intro-screen" aria-hidden="true" aria-labelledby="introTitle">
+      <div class="intro-message">
+        <img src="assets/sparkles.png" alt="" />
+        <p id="introTitle">Thank you for choosing to read the little pieces of my heart.</p>
+      </div>
+      <div class="video-frame">
+        <video id="introVideo" src="video/intro.mp4" playsinline controls></video>
+        <div id="videoFallback" class="video-fallback">
+          <img src="assets/heart.png" alt="" />
+          <p>Keep your intro video at <strong>video/intro.mp4</strong> and it will play here.</p>
+        </div>
+      </div>
+      <button id="openHeartBtn" class="primary-action ripple-btn hidden">Open My Heart &hearts;</button>
+    </section>
+
+    <section id="bookScreen" class="screen book-screen" aria-hidden="true" aria-labelledby="bookTitle">
+      <nav class="book-toolbar" aria-label="Diary pages">
+        <button id="prevPage" class="icon-btn" aria-label="Previous page">&lsaquo;</button>
+        <div class="chapter-count"><span id="pageNumber">1</span> / 3</div>
+        <button id="nextPage" class="icon-btn" aria-label="Next page">&rsaquo;</button>
+      </nav>
+
+      <div id="diaryBook" class="diary-book" aria-live="polite">
+        <article class="book-page page-memory is-visible">
+          <img class="bookmark" src="assets/bookmark.png" alt="" />
+          <p class="eyebrow">Page One</p>
+          <h2 id="bookTitle">I Miss You So, So Much.</h2>
+          <p class="page-copy">It has been months since we've met, and I miss you every single day. Some days I miss your voice. Some days I miss the comfort of simply knowing you are near. Every little memory still feels warm in my heart.</p>
+          <div class="scrapbook" aria-label="Memories gallery">
+            <figure tabindex="0"><img src="images/photo1.jpg" alt="Memory photo 1" loading="lazy" /><figcaption>photo1.jpg</figcaption></figure>
+            <figure tabindex="0"><img src="images/photo2.jpg" alt="Memory photo 2" loading="lazy" /><figcaption>photo2.jpg</figcaption></figure>
+            <figure tabindex="0"><img src="images/photo3.jpg" alt="Memory photo 3" loading="lazy" /><figcaption>photo3.jpg</figcaption></figure>
+            <figure tabindex="0"><img src="images/photo4.jpg" alt="Memory photo 4" loading="lazy" /><figcaption>photo4.jpg</figcaption></figure>
+          </div>
+        </article>
+
+        <article class="book-page page-letter">
+          <button id="envelopeBtn" class="envelope-button" aria-label="Open the love letter">
+            <img src="assets/envelope.png" alt="" />
+            <span>Open the love letter</span>
+          </button>
+          <div id="letterContent" class="letter-content">
+            <p class="eyebrow">Page Two</p>
+            <h2>Love Letter</h2>
+            <p>My love, I love you more every day, and my feelings have never faded. Sometimes I get angry, and sometimes I send silly messages at night, but everything comes from a heart that misses you and wants to be close to you. I am sorry if I ever hurt you.</p>
+            <p>We are living different lives right now, and I know life is difficult for both of us. But I never want you to feel alone. You can always share your feelings with me. I also want to know how you want to be loved, because I want to love you in the way that makes you feel happiest.</p>
+            <p>Whenever I am with you, I feel loved. You are one of the closest people in my life, and I never want to lose you. I do not need you because I love you. I want to love you because I truly love you.</p>
+            <p>I know I am bad at expressing love, but everything comes from my heart. Please do not ever leave me. Even if our relationship becomes more long distance, I will never give up. I truly love you.</p>
+          </div>
+        </article>
+
+        <article class="book-page page-promise">
+          <img class="asset-mark" src="assets/flower.png" alt="" />
+          <p class="eyebrow">Final Page</p>
+          <h2>Will you promise to stay with me forever?</h2>
+          <div id="answerArea" class="answer-area">
+            <button id="yesBtn" class="yes-btn ripple-btn">YES &hearts;</button>
+            <button id="noBtn" class="no-btn">NO</button>
+          </div>
+          <p id="teaseText" class="tease-text" aria-live="polite"></p>
+          <div id="yesMessage" class="yes-message" aria-live="polite">
+            <h3>Yay!!</h3>
+            <p>I knew you'd choose me &hearts;</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside class="music-player" aria-label="Music player">
+    <button id="musicToggle" class="music-toggle" aria-label="Play music" aria-pressed="false">
+      <span id="musicIcon" class="music-note" aria-hidden="true"></span>
+      <span id="musicAction" class="sr-only">Play</span>
+    </button>
+    <div class="music-meta">
+      <div class="music-row">
+        <span>Our song</span>
+        <span id="musicTime" class="music-time">0:00 / 0:00</span>
+      </div>
+      <div class="progress-track" aria-hidden="true"><span id="musicProgress"></span></div>
+      <input id="musicSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Song progress" />
+      <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.55" aria-label="Volume" />
+    </div>
+    <audio id="bgMusic" src="music/song.mp3" loop preload="auto"></audio>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
